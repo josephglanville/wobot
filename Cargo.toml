@@ -1,0 +1,4 @@
+[package]
+name = "wobot"
+version = "0.1.0"
+authors = ["Joseph Glanville <jpg@jpg.id.au>"]
