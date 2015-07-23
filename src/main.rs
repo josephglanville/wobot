@@ -16,6 +16,9 @@ fn main() {
     loop {
         let mut instruction = String::new();
         let _ = input.read_line(&mut instruction).unwrap();
-        robot.send(parse_instruction(instruction.trim()).unwrap());
+        match parse_instruction(instruction.trim()) {
+            Ok(i) => robot.send(i),
+            Err(_) => continue
+        }
     }
 }
