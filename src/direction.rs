@@ -1,4 +1,5 @@
 use std::fmt;
+use direction::Direction::*;
 
 pub enum Direction {
     North,
@@ -10,20 +11,20 @@ pub enum Direction {
 impl fmt::Display for Direction {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match *self {
-            Direction::North => write!(f, "NORTH"),
-            Direction::East => write!(f, "EAST"),
-            Direction::South => write!(f, "SOUTH"),
-            Direction::West => write!(f, "WEST")
+            North => write!(f, "NORTH"),
+            East => write!(f, "EAST"),
+            South => write!(f, "SOUTH"),
+            West => write!(f, "WEST")
         }
     }
 }
 
 pub fn parse_direction(input: &str) -> Result<Direction, &'static str> {
     match input {
-        "NORTH" => Ok(Direction::North),
-        "EAST" => Ok(Direction::East),
-        "SOUTH" => Ok(Direction::South),
-        "WEST" => Ok(Direction::West),
+        "NORTH" => Ok(North),
+        "EAST" => Ok(East),
+        "SOUTH" => Ok(South),
+        "WEST" => Ok(West),
         _ => Err("Invalid direction")
     }
 }
