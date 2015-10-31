@@ -12,7 +12,7 @@ use grid::Grid;
 fn main() {
     let grid = Grid::new(5,5);
     let mut robot = Robot::new(grid);
-    let mut input = stdin();
+    let input = stdin();
     loop {
         let mut instruction = String::new();
         let _ = input.read_line(&mut instruction).unwrap();
